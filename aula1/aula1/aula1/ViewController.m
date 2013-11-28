@@ -13,6 +13,33 @@
 @end
 
 @implementation ViewController
+@synthesize labelNome;
+@synthesize labelEmail;
+@synthesize nome, email;
+
+- (IBAction)enviarValores:(id)sender{
+    labelNome.text = nome.text;
+    labelEmail.text = email.text;
+    [sender resignFirstResponder];
+}
+
+- (IBAction)recuarTeclado:(id)sender{
+    [sender resignFirstResponder];
+}
+- (IBAction)clicarNoFundo:(id)sender{
+    [nome resignFirstResponder];
+    [email resignFirstResponder];
+}
+
+-(IBAction)mudarLabel:(id)sender{
+    labelNome.text = nome.text;
+    labelEmail.text = email.text;
+}
+
+- (IBAction)apagarLabel:(id)sender {
+    labelNome.text = Nil;
+    labelEmail.text= Nil;
+}
 
 - (void)viewDidLoad
 {
